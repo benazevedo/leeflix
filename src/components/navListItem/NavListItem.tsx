@@ -27,6 +27,7 @@ function NavListItem({ nav, navOnClick }: INavListItem) {
         ) : (
           nav.name
         )} */}
+        {nav.name}
       </a>
     </li>
   );

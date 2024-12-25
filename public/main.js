@@ -27,20 +27,22 @@ function createWindow() {
 }
 
 // Function to start the http-server
+const { exec } = require('child_process');
+
 function startHttpServer() {
-  httpServer = spawn('npx', ['http-server', 'E:/', '--port', '8080']);
-
-  httpServer.stdout.on('data', (data) => {
-    console.log(`http-server: ${data}`);
-  });
-
-  httpServer.stderr.on('data', (data) => {
-    console.error(`http-server error: ${data}`);
-  });
-
-  httpServer.on('close', (code) => {
-    console.log(`http-server exited with code ${code}`);
-  });
+  httpServer = exec(
+    'npx http-server E:/ --port 8080',
+    (error, stdout, stderr) => {
+      if (error) {
+        console.error(`http-server error: ${error}`);
+        return;
+      }
+      console.log(`http-server: ${stdout}`);
+      if (stderr) {
+        console.error(`http-server stderr: ${stderr}`);
+      }
+    },
+  );
 }
 
 // Electron lifecycle events
