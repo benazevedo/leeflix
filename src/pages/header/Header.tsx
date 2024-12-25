@@ -4,6 +4,7 @@ import Search from '../../components/search/Search';
 import NavListItem from '../../components/navListItem/NavListItem';
 import Button from '../../components/button/Button';
 import navListData from '../../data/navListData';
+import logo from '../../images/lee.png';
 
 interface IHeader {
   activeNav: any;
@@ -32,9 +33,12 @@ function Header({ activeNav, setActiveNav, scroll, onSearch }: IHeader) {
 
   return (
     <header className={`${scroll > 100 ? 'scrolled' : undefined}`}>
-      <a href="/" className="logo">
-        LEEFLIX
-      </a>
+      <div className="logo-box">
+        <img className="logo-img" src={logo} alt={'LEEFLIX'} />
+        <a href="/" className="logo">
+          LEEFLIX
+        </a>
+      </div>
       {open ? (
         <a className="menu" onClick={handleToggleMenu}>
           <ion-icon name="close-outline"></ion-icon>

@@ -23,11 +23,25 @@ header.scrolled {
 .logo {
   font-family: 'Inria Sans', cursive;
   font-size: 35px;
+  font-weight: 'bold';
   color: #ffffff;
   letter-spacing: 2px;
   font-weight: 300;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.logo-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s;
+  z-index: 10000;
+}
+
+.logo-img {
+  height: 40px;
+  margin-right: 10px;
 }
 
 .nav {
