@@ -22,11 +22,11 @@ function NavListItem({ nav, navOnClick }: INavListItem) {
         onClick={() => navOnClick(nav._id)}
         className={`${nav.active ? 'active' : undefined}`}
       >
-        {nav.name === 'home' ? (
+        {/* {nav.name === 'home' ? (
           <ion-icon name="home-outline"></ion-icon>
         ) : (
           nav.name
-        )}
+        )} */}
       </a>
     </li>
   );

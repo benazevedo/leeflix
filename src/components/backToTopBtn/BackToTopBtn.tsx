@@ -15,7 +15,7 @@ function BackToTopBtn({ scroll }: IBackToTopBtn) {
       className={`back-to-top ${scroll > 100 ? 'active' : undefined}`}
       onClick={backToTop}
     >
-      <ion-icon name="arrow-up-outline"></ion-icon>
+      {/* <ion-icon name="arrow-up-outline"></ion-icon> */}
     </a>
   );
 }

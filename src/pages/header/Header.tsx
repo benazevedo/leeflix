@@ -39,7 +39,7 @@ function Header({ activeNav, setActiveNav, scroll, onSearch }: IHeader) {
           LEEFLIX
         </a>
       </div>
-      {open ? (
+      {/* {open ? (
         <a className="menu" onClick={handleToggleMenu}>
           <ion-icon name="close-outline"></ion-icon>
         </a>
@@ -47,7 +47,7 @@ function Header({ activeNav, setActiveNav, scroll, onSearch }: IHeader) {
         <a className="menu" onClick={handleToggleMenu}>
           <ion-icon name="menu-outline"></ion-icon>
         </a>
-      )}
+      )} */}
       <ul className="nav">
         {navList.map((nav) => (
           <NavListItem

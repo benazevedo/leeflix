@@ -19,9 +19,9 @@ function PlayBtn({ movie }: IPlayBtn) {
           movie.active ? 'active' : undefined
         }`}
       >
-        <a className="playBtn" onClick={toggleModal}>
+        {/* <a className="playBtn" onClick={toggleModal}>
           <ion-icon name="play-outline"></ion-icon>
-        </a>
+        </a> */}
         <p> Watch Trailer</p>
       </div>
       {/* {movie.active && (

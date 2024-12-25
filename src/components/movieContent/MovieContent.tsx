@@ -17,7 +17,7 @@ function MovieContent({ movie }: IMovieContent) {
       </h4>
       <p>{movie.description}</p>
       <div className="button">
-        <Button
+        {/* <Button
           icon={<ion-icon name="bookmark-outline"></ion-icon>}
           name="Watch Later"
           color="var(--primary)"
@@ -26,7 +26,7 @@ function MovieContent({ movie }: IMovieContent) {
         <Button
           icon={<ion-icon name="add-outline"></ion-icon>}
           name="My List"
-        />
+        /> */}
       </div>
     </div>
   );

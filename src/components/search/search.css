@@ -23,7 +23,7 @@
   color: #ffffff;
 }
 
-.search ion-icon {
+.search svg {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);

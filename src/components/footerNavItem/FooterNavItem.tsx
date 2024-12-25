@@ -8,7 +8,7 @@ interface IFooterNavItem {
 function FooterNavItem({ name }: IFooterNavItem) {
   return (
     <li>
-      <ion-icon name="chevron-forward-outline"></ion-icon>{' '}
+      {/* <ion-icon name="chevron-forward-outline"></ion-icon>{' '} */}
       <a href="#">{name}</a>
     </li>
   );

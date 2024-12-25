@@ -2,17 +2,21 @@
   "name": "leeflix",
   "version": "0.1.0",
   "private": true,
-  "main": "main.js",
+  "main": "public/main.js",
+  "homepage": "./",
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@electron/remote": "^2.1.2",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.1",
     "http-server": "^14.1.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "ionicons": "^7.4.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-ionicons": "^4.2.1",
     "react-scripts": "5.0.1",
     "swiper": "^10.3.1",
     "web-vitals": "^2.1.4"
@@ -22,8 +26,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "electron:serve": "electron .",
-    "electron:build": "electron-builder"
+    "electron:serve": "concurrently -k \"cross-env BROWSER=none npm start\" \"npm electron:start\"",
+    "electron:build": "",
+    "electron:start": "wait-on tcp:3000 && electron ."
   },
   "eslintConfig": {
     "extends": [
@@ -44,7 +49,13 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-react": "^7.26.3",
     "@types/aos": "^3.0.7",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "babel-loader": "^9.2.1",
+    "concurrently": "^9.1.0",
     "electron": "^33.2.1",
     "electron-builder": "^25.1.8"
   },
@@ -55,7 +66,7 @@
     },
     "files": [
       "build/**/*",
-      "main.js"
+      "public/main.js"
     ],
     "win": {
       "target": "nsis",

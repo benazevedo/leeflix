@@ -1,4 +1,7 @@
 const { app, BrowserWindow } = require('electron');
+
+require('@electron/remote/main').initialize();
+
 const path = require('path');
 const { spawn } = require('child_process');
 
@@ -14,6 +17,7 @@ function createWindow() {
       preload: path.join(__dirname, 'preload.js'),
       nodeIntegration: true, // Allows node integration if needed
       contextIsolation: false, // Disable context isolation if needed
+      enableRemoteModule: true,
     },
     autoHideMenuBar: true, // Hides the menu bar for a cleaner look
   });
