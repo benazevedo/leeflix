@@ -1,0 +1,85 @@
+/* General content styling for the banner */
+.banner .content {
+  position: relative;
+  max-width: 550px;
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0);
+  transition: 1s;
+  z-index: 1000;
+}
+
+.banner .content.active {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.movie-title {
+  max-width: 250px;
+  margin-bottom: 20px;
+}
+
+/* Title and year styling */
+.banner .content h4 {
+  color: #ffffff; /* White color for both title and year */
+  font-weight: 400;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.banner .content h4 span {
+  padding: 0 10px;
+  color: #ffffff; /* White text */
+}
+
+/* Vertical line between title and year */
+.banner .content h4 span:not(:last-child) {
+  border-right: 1px solid rgba(255, 255, 255, 0.6); /* Semi-transparent white line */
+}
+
+.banner .content h4 span:first-child {
+  padding-left: 0;
+}
+
+.banner .content h4 span:last-child {
+  border-right: 0; /* No border on the last element */
+}
+
+/* Description styling */
+.banner .content p {
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.5em;
+  color: #ffffff; /* Keep the description text white */
+  margin: 20px 0 30px;
+}
+
+.banner .content .button {
+  position: relative;
+  display: flex;
+  gap: 10px; /* Space between buttons */
+}
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 768px) {
+  .banner .content {
+    margin-top: 0;
+  }
+
+  .movie-title {
+    max-width: 150px;
+  }
+
+  .banner .content h4 {
+    font-size: 16px;
+  }
+
+  .banner .content p {
+    font-size: 0.7rem;
+    font-weight: 200;
+    line-height: 1em;
+    margin: 10px 0 20px;
+  }
+}

@@ -1,0 +1,22 @@
+.categories .filters {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 10px;
+  /* margin-top: 50px; */
+}
+
+.categories .filters li {
+  color: #ffffff;
+  padding: 8px 25px;
+  background: #191919;
+  transition: 0.3s;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.categories .filters li:hover,
+.categories .filters li.active {
+  background: var(--primary);
+}

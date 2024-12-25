@@ -1,0 +1,135 @@
+/*--------------------------------------------------------------
+# Main
+--------------------------------------------------------------*/
+main {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 0 120px;
+  background: #000000;
+}
+
+main::before {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: -80px;
+  width: 100%;
+  height: 200px;
+  background: #000000;
+  filter: blur(50px);
+}
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+
+section {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 100px 20px;
+  width: 100%;
+  transition: ease-in-out 1s;
+  transform-origin: bottom;
+  z-index: 1100;
+}
+
+section h1 {
+  font-weight: 400;
+  font-size: 4em;
+  letter-spacing: 1px;
+  margin-bottom: 150px;
+  text-align: center;
+  color: #ffffff;
+}
+
+section .section-title {
+  position: relative;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+section .section-title::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: -30px;
+  height: 5px;
+  width: 50%;
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--primary),
+    transparent
+  );
+  z-index: 1000;
+}
+
+section p {
+  font-weight: 300;
+  color: #111111;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 120px 30px 20px;
+  }
+}
+
+/* Video Player */
+
+/* Video player modal */
+.video-player-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* High z-index to ensure it overlays everything */
+}
+
+/* Video player container */
+.video-player-container {
+  position: relative;
+  background: #000;
+  border-radius: 10px;
+  padding: 20px;
+  width: 80%;
+  max-width: 900px;
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.5);
+}
+
+/* Video player */
+.video-player {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Close button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+  border: 1px solid var(--primary);
+}
+
+.close-button:hover {
+  border: 1px solid white;
+}

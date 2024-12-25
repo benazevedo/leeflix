@@ -1,0 +1,68 @@
+.swiper {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.movieSwiper {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60vw;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 150px;
+  height: 200px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .movieSwiper {
+    width: 90vw;
+  }
+
+  .swiper {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 100px;
+    height: 150px;
+  }
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.ranking-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: var(--primary); /* Use your primary color */
+  color: #ffffff;
+  padding: 5px 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

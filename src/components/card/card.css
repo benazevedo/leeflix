@@ -1,0 +1,115 @@
+section .movie-card {
+  border: none;
+  position: relative;
+  border-radius: 0;
+  background: #000000 !important;
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.5);
+  transition: 0.5s;
+  overflow: hidden; /* Ensures content stays within card boundaries */
+  cursor: pointer; /* Add pointer cursor on hover */
+}
+
+/* Hover effect for card */
+section .movie-card:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 0 20px var(--primary), 0 0 40px var(--primary); /* Glowing border */
+}
+
+/* Ensure the card image is responsive */
+section .movie-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Ranking badge for the card */
+section .movie-card .ranking-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--primary);
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  z-index: 10;
+}
+
+/* Center content and ensure background visibility on hover */
+section .movie-card .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+  background: rgba(0, 0, 0, 0.5); /* 50% opacity background */
+}
+
+/* Heading styling for content */
+section .movie-card .content h4 {
+  position: relative;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  text-align: center; /* Ensure the heading is centered */
+}
+
+section .movie-card .content h4::before {
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: -10px;
+  height: 5px;
+  width: 80%;
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--primary),
+    transparent
+  );
+  z-index: 1000;
+}
+
+/* Hover effect to show content */
+section .movie-card:hover .content {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Styling for icons */
+.card-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: center; /* Center icons */
+}
+
+.card-icons ion-icon {
+  font-size: 2.5rem;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+/* Hover effect for icons */
+.card-icons ion-icon:hover {
+  color: var(--primary);
+  transform: scale(1.2); /* Scale up icons slightly */
+  transition: 0.3s;
+}
+
+/* Add margin between rows */
+.col-lg-2,
+.col-md-4,
+.col-sm-6 {
+  margin-bottom: 20px; /* Add space between the rows */
+}

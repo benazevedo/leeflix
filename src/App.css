@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primary-black: #000000;
+  --primary-white: #ffffff;
+  --primary: #dc143c;
+  --primary-purple: #675dff;
+  --primary-blue-electric: #0077ff;
+  --primary-gray-charcoal: #333333;
+  --primary-green-neon: #39ff14;
+}
+
+body {
+  background: #000000;
+  font-family: 'Roboto', sans-serif;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
