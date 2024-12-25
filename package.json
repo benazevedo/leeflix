@@ -2,6 +2,7 @@
   "name": "leeflix",
   "version": "0.1.0",
   "private": true,
+  "main": "main.js",
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@testing-library/jest-dom": "^5.17.0",
@@ -9,6 +10,7 @@
     "@testing-library/user-event": "^13.5.0",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.1",
+    "http-server": "^14.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -19,7 +21,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron:serve": "electron .",
+    "electron:build": "electron-builder"
   },
   "eslintConfig": {
     "extends": [
@@ -40,6 +44,26 @@
     ]
   },
   "devDependencies": {
-    "@types/aos": "^3.0.7"
+    "@types/aos": "^3.0.7",
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.leeflix.app",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "build/**/*",
+      "main.js"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "public/icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "public/icon.icns"
+    }
   }
 }
