@@ -9,7 +9,8 @@ interface IMovieContent {
 
 function MovieContent({ movie }: IMovieContent) {
   return (
-    <div className={`content ${movie.active ? 'active' : undefined}`}>
+    // <div className={`content ${movie.active ? 'active' : undefined}`}>
+    <div className={`content`}>
       <img className="movie-title" src={movie.titleImg} alt={movie.title} />
       <h4>
         <span>{movie.title}</span>

@@ -8,7 +8,8 @@ interface ICard {
 }
 
 function Card({ movie, onPlayMovie }: ICard) {
-  const moviePath = `http://localhost:8080/${movie.title} (${movie.year}).mp4`;
+  const moviePath = `http://localhost:8080/movies/${movie.title} (${movie.year}).mp4`;
+  const movieImagePath = `http://localhost:8080/images/${movie.previewImg}`;
 
   return (
     <div className="col-lg-2 col-md-4 col-sm-6">
@@ -17,7 +18,7 @@ function Card({ movie, onPlayMovie }: ICard) {
         onClick={() => onPlayMovie(moviePath)}
         style={{ cursor: 'pointer' }}
       >
-        <img className="img-fluid" src={movie.previewImg} alt={movie.title} />
+        <img className="img-fluid" src={movieImagePath} alt={movie.title} />
         <div className="content">
           <h4>{movie.title}</h4>
           <div className="card-icons">

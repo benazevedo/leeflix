@@ -8,9 +8,8 @@ interface IMovieRanking {
 
 function MovieRanking({ movie }: IMovieRanking) {
   return (
-    <div className={`ranking ${movie.active ? 'active' : undefined}`}>
-      <h2>#{movie.ranking}</h2>
-    </div>
+    // <div className={`ranking ${movie.active ? 'active' : undefined}`}>
+    <div className={`ranking`}>{/* <h2>#{movie.ranking}</h2> */}</div>
   );
 }
 

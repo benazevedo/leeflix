@@ -29,10 +29,10 @@ function Banner() {
 
   const handleSlideChange = (id: number) => {
     const newMovies = movies.map((movie: IMovie) => {
-      movie.active = false;
-      if (movie._id === id) {
-        movie.active = true;
-      }
+      // movie.active = false;
+      // if (movie._id === id) {
+      //   movie.active = true;
+      // }
       return movie;
     });
     setMovies(newMovies);
@@ -47,7 +47,8 @@ function Banner() {
             <img
               src={movie.bgImg}
               alt=""
-              className={`bgImg ${movie.active ? 'active' : undefined}`}
+              className={`bgImg active`}
+              // className={`bgImg ${movie.active ? 'active' : undefined}`}
             />
             <div className="container-fluid">
               <div className="row">

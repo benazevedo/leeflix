@@ -37,7 +37,7 @@ function MovieSwiper({ slides, slideChange }: IMovieSwiper) {
       {slides.map((slide: IMovie) => (
         <SwiperSlide key={slide._id}>
           <div className="image-container">
-            <span className="ranking-badge">#{slide.ranking}</span>
+            {/* <span className="ranking-badge">#{slide.ranking}</span> */}
             <img
               src={slide.previewImg}
               alt={slide.title}

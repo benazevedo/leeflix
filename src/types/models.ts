@@ -1,6 +1,6 @@
 export interface IMovie {
   _id: number;
-  ranking: string;
+  // ranking: string;
   titleImg: string;
   bgImg: string;
   previewImg: string;
@@ -12,7 +12,7 @@ export interface IMovie {
   description: string;
   category: string[];
   series: string;
-  active: boolean;
+  // active: boolean;
 }
 
 interface IAuthor {

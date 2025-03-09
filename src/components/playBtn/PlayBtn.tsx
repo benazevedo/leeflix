@@ -15,9 +15,10 @@ function PlayBtn({ movie }: IPlayBtn) {
   return (
     <>
       <div
-        className={`trailer d-flex align-items-center justify-content-between ${
-          movie.active ? 'active' : undefined
-        }`}
+        className={`trailer d-flex align-items-center justify-content-between`}
+        // className={`trailer d-flex align-items-center justify-content-between ${
+        //   movie.active ? 'active' : undefined
+        // }`}
       >
         {/* <a className="playBtn" onClick={toggleModal}>
           <ion-icon name="play-outline"></ion-icon>
