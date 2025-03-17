@@ -2,7 +2,7 @@
   "name": "leeflix",
   "version": "0.1.0",
   "private": true,
-  "main": "main.js",
+  "main": "public/main.js",
   "homepage": "./",
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
@@ -12,24 +12,27 @@
     "@testing-library/user-event": "^13.5.0",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.1",
+    "customize-cra": "^1.0.0",
+    "fast-json-parse": "^1.0.3",
     "fs": "^0.0.1-security",
     "http-server": "^14.1.1",
     "ionicons": "^7.4.0",
-    "path-browserify": "^1.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-ionicons": "^4.2.1",
     "react-scripts": "5.0.1",
+    "serve": "^13.0.2",
     "swiper": "^10.3.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "concurrently -k \"react-scripts start\" \"npx http-server E:/ --port 8080\"",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "start:server": "npx serve E:/ -l 8080 --config .serve.json",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject",
-    "electron:serve": "concurrently -k \"cross-env BROWSER=none npm start\" \"npm electron:start\"",
-    "electron:build": "electron-builder build --win",
+    "electron:serve": "concurrently -k \"cross-env BROWSER=none npm run start:server\" \"npm run electron:start\"",
+    "electron:build": "electron-builder build --win --arm64",
     "electron:start": "concurrently -k \"npm:start\" \"wait-on tcp:3000 && electron .\""
   },
   "eslintConfig": {
@@ -62,6 +65,8 @@
     "cross-env": "^7.0.3",
     "electron": "^33.2.1",
     "electron-builder": "^25.1.8",
+    "path-browserify": "^1.0.1",
+    "react-app-rewired": "^2.2.1",
     "wait-on": "^8.0.1"
   },
   "build": {
@@ -71,11 +76,11 @@
     },
     "files": [
       "build/**/*",
-      "main.js",
+      "public/main.js",
       "public/data/**/*"
     ],
     "extraMetadata": {
-      "main": "main.js"
+      "main": "public/main.js"
     },
     "win": {
       "target": "nsis",

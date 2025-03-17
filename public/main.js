@@ -3,9 +3,7 @@ const { app, BrowserWindow } = require('electron');
 require('@electron/remote/main').initialize();
 
 const path = require('path');
-const { spawn } = require('child_process');
 
-let httpServer; // Variable to store the http-server process
 let mainWindow; // Variable to store the main window
 
 function createWindow() {
@@ -15,8 +13,10 @@ function createWindow() {
     height: 1920,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
-      nodeIntegration: true, // Allows node integration if needed
-      contextIsolation: false, // Disable context isolation if needed
+      nodeIntegration: true,
+      contextIsolation: false,
+      webSecurity: false, // 🔥 Allows local file loading
+      allowRunningInsecureContent: true, // 🔥 Allows HTTP resources if needed
       enableRemoteModule: true,
     },
     autoHideMenuBar: true, // Hides the menu bar for a cleaner look
@@ -47,8 +47,9 @@ function startHttpServer() {
 
 // Electron lifecycle events
 app.on('ready', () => {
-  startHttpServer(); // Start the http-server
-  createWindow(); // Create the main application window
+  // app.disableHardwareAcceleration();
+  startHttpServer();
+  createWindow();
 });
 
 app.on('window-all-closed', () => {

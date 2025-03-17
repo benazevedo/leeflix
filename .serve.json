@@ -1,0 +1,11 @@
+{
+  "public": "./",
+  "ignored": [
+    "System Volume Information",
+    "RECYCLE.BIN",
+    "pagefile.sys",
+    "swapfile.sys",
+    ".DS_Store",
+    ".git"
+  ]
+}
